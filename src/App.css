@@ -58,3 +58,11 @@
 .todoContent button:hover{
   background-color: #203239;
 }
+
+
+.noTodos-paragraph{
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: 500;
+  color: #222;
+}

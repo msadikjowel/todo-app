@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-
 // getting items from local storage
 const getLocalItems = () => {
     let list = localStorage.getItem('Todos');
@@ -55,6 +54,8 @@ const Todos: FC = () => {
     }, [todo])
 
 
+
+
     return (
         <>
             <Box className='header'>
@@ -73,12 +74,16 @@ const Todos: FC = () => {
 
             </Box>
 
+
+
             <Box>
                 {
                     todo.map((task: ITodos, index) => {
                         return <TodoTask key={index} task={task} handleDelete={handleDelete} />
                     })
                 }
+
+
             </Box>
 
         </>
