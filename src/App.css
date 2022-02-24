@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
+  height: 40vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  background-color: #EEEDDE;
 }
 
-.App-link {
-  color: #61dafb;
+.header h2{
+  color: #203239;
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header button{
+  color: #EEEDDE;
+  font-size: .9rem;
+  background-color: #203239;
+}
+
+.header button:hover{
+  color: #EEEDDE;
+  background-color: #203239;
+}
+.header input{
+  color: #203239;
+  width: 35vh;
+}
+
+
+.todoContent{
+  padding-top: 1.5rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.todoContent .todo{
+  background-color: #203239;
+  padding: 1rem;
+  color: #EEEDDE;
+  border-radius: .5rem;
+}
+
+.todoContent button{
+  color: #B33030;
+  margin-left: 1rem; 
+  padding: .5rem;
+  border-radius: 0; 
+}
+
+.todoContent button:hover{
+  background-color: #203239;
 }
