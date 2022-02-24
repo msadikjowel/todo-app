@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 
+// getting items from local storage
 const getLocalItems = () => {
     let list = localStorage.getItem('Todos');
     console.log(list)
@@ -17,37 +18,48 @@ const getLocalItems = () => {
     }
 }
 
+
 const Todos: FC = () => {
 
+
+    // states
     const [task, setTask] = useState<string>('');
     const [todo, setTodo] = useState<ITodos[]>(getLocalItems());
 
+
+    // getting input items from input box
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
         setTask(event.target.value);
     }
 
+
+    // adding todo with button click
     const addTodo = (): void => {
         const newTask = { taskName: task }
         setTodo([...todo, newTask]);
         setTask('')
     }
 
+
+    // deleting todo with button click
     const handleDelete = (taskDelete: string): void => {
         setTodo(todo.filter((task) => {
             return task.taskName != taskDelete;
         }))
     }
 
+
+    // adding todos to the local storage
     useEffect(() => {
         localStorage.setItem('Todos', JSON.stringify(todo));
     }, [todo])
 
+
     return (
         <>
             <Box className='header'>
-                <Box>
-                    <h2>Todo App</h2>
-                </Box>
+
+                <Box> <h2>Todo App</h2> </Box>
 
                 <TextField
                     id="standard-basic"
@@ -56,9 +68,9 @@ const Todos: FC = () => {
                     type="text"
                     value={task}
                     onChange={handleChange} /> <br />
-                <Button
-                    onClick={addTodo}
-                >Add Todo</Button>
+
+                <Button onClick={addTodo}>Add Todo</Button>
+
             </Box>
 
             <Box>
